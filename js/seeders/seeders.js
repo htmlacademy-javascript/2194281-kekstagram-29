@@ -17,5 +17,4 @@ const creatPhotoOptions = () => ({
   comments: userComments.slice(getRandomArrayElement(userPhotoNumber)),
 });
 const newArrayFhotoOptions = Array.from({length: 25}, creatPhotoOptions);
-
-console.log(newArrayFhotoOptions);
+export {newArrayFhotoOptions};
