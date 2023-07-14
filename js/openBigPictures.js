@@ -47,8 +47,30 @@ pictures.forEach(item => {
         // добавляю аватар коментирующего из сидера (имитация сервера)
         commentsElement.querySelector('.social__picture').src = commentsArray.comments[0].avatar;
 
-        // добавляю склонированный элемент в разметку
-        commetnsBlock.appendChild(commentsElement);
+        // переменная сщ стартовым числом комментов
+        let viewComments = 5;
+
+
+        // изначально выводим 5 комментов
+        if(i < viewComments) {
+          // добавляю склонированный элемент в разметку
+          commetnsBlock.appendChild(commentsElement);
+        }
+
+        // кнопка "Загрузить еще"
+        let loadCommBtn = document.querySelector('.social__comments-loader');
+        // Узел с выводом текста числа комментов
+        let startCommentsCount = document.querySelector('.social__comment-count');
+
+        // обработчик по клику на "загрузить еще" подгружает оставшиеся комменты и меняет текст с выводом числа комментов
+        loadCommBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          // меняем текст
+          startCommentsCount.textContent = commetsCount.textContent + ' из ' + commetsCount.textContent + ' комментариев';
+          // подгружаем все комменты
+          commetnsBlock.appendChild(commentsElement);
+        })
+
       }
     });
   });
