@@ -22,7 +22,6 @@ buttonPlus.addEventListener('click', () => {
   if (valueScale === 100) {
     effectImages.style.transform = `scale(1)`
   }
-
 })
 
 
